@@ -14,7 +14,8 @@ AFPSThrowActor::AFPSThrowActor()
 	PrimaryActorTick.bCanEverTick = true;
 
 	bReplicates = true;
-	bReplicateMovement = true;
+	// bReplicateMovement = true;
+    SetReplicateMovement(true);
 	//if set bNetUseOwnerRelevancy false, Multicast UFUNCTION of this Acotr would not trigger on client.
 	bNetUseOwnerRelevancy = true;
 	

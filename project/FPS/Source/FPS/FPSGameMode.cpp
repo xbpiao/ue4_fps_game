@@ -106,6 +106,15 @@ void AFPSGameMode::PostLogin(APlayerController* NewPlayer)
 	}
 }
 
+void AFPSGameMode::Logout(AController* Exiting)
+{
+    if (AFPSPlayerController* CurController = Cast<AFPSPlayerController>(Exiting))
+    {
+        UserMap.Remove(CurController->UserName());
+    }
+    Super::Logout(Exiting);
+}
+
 AFPSCharacter* AFPSGameMode::GetOwnCharacter(const FString& UserName)
 {
 	AFPSCharacter* Ret = nullptr;
